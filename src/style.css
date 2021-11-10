@@ -6,8 +6,7 @@
     box-sizing: border-box;
 }
 
-body{
-    background: url(images/ImagenPrincipal.jpeg);
+#fondo01{
     background-repeat: no-repeat;
     background-size: cover; 
     display: grid;
@@ -85,3 +84,4 @@ body{
     font-family: "open sans";
     text-decoration: none;
 }
+

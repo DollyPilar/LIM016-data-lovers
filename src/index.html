@@ -13,14 +13,14 @@
 
     <nav class="navegacion">
       <ul class="menu">
-        <li><a href="#">PRINCIPAL</a></li>
-        <li><a href="#">VER TODOS</a></li>
+        <li><a href="#"></a></li>
+        <li id="botonVerTodos" type="buton"><a href="#">VER TODOS</a></li>
         <li><a href="#">GÉNERO</a>
-          <ul class="submenu">
-            <li><a href="#1">Female</a></li>
-            <li><a href="#2">Male</a></li>
-            <li><a href="#3">Unknown</a></li>
-            <li><a href="#4">Genderless</a></li>
+          <ul class="submenu" type="button">
+            <li id="botonIrFemale"><a href="#1">Female</a></li>
+            <li id="botonIrMale"><a href="#2">Male</a></li>
+            <li type="button" id="botonIrUnknown"><a href="#3">Unknown</a></li>
+            <li type="button" id="botonIrGenderless"><a href="#4">Genderless</a></li>
           </ul>
         </li>
         <li><a href="#">ESPECIE</a>
@@ -39,19 +39,58 @@
             <li><a href="#16">Parasite</a></li>
           </ul>
         </li>
-        <li><a href="#">STATUS</a></li>
+        <li><a href="#">STATUS</a>
+          <ul class="submenu">
+            <li><a href="#17">Alive</a></li>
+            <li><a href="#18">Dead</a></li>
+          </ul>
+        </li>
+
+
       </ul>
     </nav>
-
-    <footer class="footer">
-      <ul class="desarrolladoras">
-        <li><a href="#">2021 <> desarrollado por:</a></li>
-        <li><a href="#">Dolly Ochoa</a></li>
-        <li><a href="#">Lucero Sotelo</a>
-      </ul>
-    </footer>
-
   </header>
+
+  <div id="vistaPrincipal">
+    <img src="images/fondo01.jpeg" alt="">
+  </div>
+
+  <div id="verTodos" style="display: none">
+    ESTA ES LA VISTA DE VER TODOS
+    <img src="images/fondo06.jpg" alt="">
+  </div>
+
+  <div id="gender" style="display: block"> 
+    <div id="vistaGenderFemale" style="display: none">
+      ESTA ES LA VISTA DE GENDER FEMALE
+      <img src="images/fondo02.jpg" alt="">
+    </div>
+
+    <div id="vistaGenderMale" style="display: none">
+      ESTA ES LA VISTA DE GENDER MALE
+      <img src="images/fondo04.png" alt="">
+    </div>
+
+    <div id="vistaGenderUnknown" style="display: none">
+      ESTA ES LA VISTA DE GENDER UNKNOWN
+      <img src="images/fondo05.png" alt="">
+    </div>
+
+    <div id="vistaGenderGenderless" style="display: none">
+      ESTA ES LA VISTA DE GENDER GENDERLESS
+      <img src="images/fondo06.jpg" alt="">
+    </div>
+  </div>
+
+  <footer class="footer">
+    <ul class="desarrolladoras">
+      <li><a href="#">2021 <> desarrollado por:</a></li>
+      <li><a href="#">Dolly Ochoa</a></li>
+      <li><a href="#">Lucero Sotelo</a>
+    </ul>
+  </footer>
+
+
 
   <div id="root"></div>
   <script src="main.js" type="module"></script>
