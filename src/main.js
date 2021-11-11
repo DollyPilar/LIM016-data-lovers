@@ -1,9 +1,6 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
-//import data from './data/pokemon/pokemon.js';
 import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(example, data);
+console.log(data.results);
 
 let botonVerTodos = document.getElementById("botonVerTodos");
 let botonIrFemale = document.getElementById("botonIrFemale");
@@ -61,3 +58,14 @@ function verVistaGenderless(){
 }
 
 
+let arregloPersonajes = [];
+arregloPersonajes = data.results
+
+let newArray = arregloPersonajes.filter(function(element) {
+    return element.gender == "Female";    
+});
+console.log("=====Esta es la data filtrada por female======");
+console.log(newArray);
+
+
+ 
