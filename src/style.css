@@ -1,10 +1,6 @@
 *{
-    margin: 0;
     padding: 0;
-    /*-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    */
+    margin: 0;
 }
 
 body {
@@ -18,57 +14,63 @@ body {
     flex-wrap: wrap;
 }
 
-
-.navegacion{
-    width: 100%;
-    background: rgb(0, 0, 0);
-    opacity: 0.7;
-    text-align: center;
-    margin: auto;
+.logo{
+    height: 100px;
+    width: 400px;
+    margin: 0 0 0 20px;
+  }
+  
+  nav{
+    background-color: #adff2f;
+    /*max-width: 900px;*/
+    font-size: 20px;
     margin-top: 0;
+      width: 100%;
+      height: 90px;
+  }
+  
+  .menu-horizontal{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  float: right;
+  margin: 10px 60px 0 0
+  }
+  
+  .menu-horizontal > li > a{
+  display: block;
+  padding: 25px 30px 30px 30px;
+  color: white;
+  text-decoration: none;
+  }
+  
+  .menu-horizontal > li:hover{
+  background-color: #008b8b;
+  }
+  
+  .menu-vertical{
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: 150px;
+  height: auto;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 7px 5px 5px 5px;
+  }
+  
+  .menu-horizontal li:hover .menu-vertical{
+  display: block;
+  }
+  
+  .menu-vertical li:hover{
+  background-color: lightblue;
 }
-
-.navegacion ul{
-    list-style: none;
-}
-
-.menu > li{
-    display: inline-block;
-}
-
-.menu >li >a{
-    display: block;
-    padding: 25px 50px;
-    color: #ffffff;
-    font-family: "open sans";
-    text-decoration: none;
-}
-
-.menu li a:hover{
-    color: #ffffff;
-    transition: all .4s;
-    font-weight: bold;
-}
-
-.submenu {
-    position: absolute;
-    background: #333333;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.7s;
-}
-
-.submenu li a{
-    display: block;
-    padding: 15px;
-    color: #fff;
-    font-family: "Open sans";
-    text-decoration: none;
-}
-
-.menu li:hover .submenu{
-    visibility: visible;
-    opacity: 1;
+  
+.menu-vertical li a{
+display: block;
+color: white;
+padding: 5px 5px 5px 5px;
+text-decoration: none;
 }
 
 .footer{
