@@ -1,66 +1,82 @@
-import data from './data/rickandmorty/rickandmorty.js';
+import data from "./data/rickandmorty/rickandmorty.js";
 
 console.log(data.results);
 
-let arrayPersonajes = data.results
+let arrayPersonajes = data.results;
 
+let botonInicio = document.getElementById("botonInicio");
 let botonVerTodos = document.getElementById("botonVerTodos");
-let botonIrFemale = document.getElementById("botonIrFemale");
-let botonIrMale = document.getElementById("botonIrMale");
-let botonIrUnkdown = document.getElementById("botonIrUnknown");
-let botonIrGenderless = document.getElementById("botonIrGenderless");
+let botonFemale = document.getElementById("botonFemale");
+let botonMale = document.getElementById("botonMale");
+let botonUnkdown = document.getElementById("botonUnknown");
+let botonGenderless = document.getElementById("botonGenderless");
+
+//Mostrando vista de sección Inicio
+botonInicio.addEventListener("click", verInicio);
+function verInicio() {
+  document.getElementById("inicio").style.display = "block";
+  document.getElementById("verTodos").style.display = "none";
+  document.getElementById("genderFemale").style.display = "none";
+  document.getElementById("genderMale").style.display = "none";
+  document.getElementById("genderUnknown").style.display = "none";
+  document.getElementById("genderGenderless").style.display = "none";
+}
 
 //Mostrando vista de sección Ver Todos
 botonVerTodos.addEventListener("click", verVerTodos);
-function verVerTodos(){
-    document.getElementById("vistaInicio").style.display = "none";
-    document.getElementById("verTodos").style.display = "block";
+function verVerTodos() {
+  document.getElementById("inicio").style.display = "none";
+  document.getElementById("verTodos").style.display = "block";
+  document.getElementById("genderFemale").style.display = "none";
+  document.getElementById("genderMale").style.display = "none";
+  document.getElementById("genderUnknown").style.display = "none";
+  document.getElementById("genderGenderless").style.display = "none";
 }
 
 //Mostrando y ocultando vistas de Gender (sería mejor con if)
-botonIrFemale.addEventListener("click", verVistaFemale);
-function verVistaFemale(){
-    document.getElementById("vistaInicio").style.display = "none";
-    document.getElementById("verTodos").style.display = "none";
-    document.getElementById("vistaGenderFemale").style.display = "block";
-    document.getElementById("vistaGenderMale").style.display = "none";
-    document.getElementById("vistaGenderUnknown").style.display = "none";
-    document.getElementById("vistaGenderGenderless").style.display = "none";
+botonFemale.addEventListener("click", verFemale);
+function verFemale() {
+  document.getElementById("inicio").style.display = "none";
+  document.getElementById("verTodos").style.display = "none";
+  document.getElementById("genderFemale").style.display = "block";
+  document.getElementById("genderMale").style.display = "none";
+  document.getElementById("genderUnknown").style.display = "none";
+  document.getElementById("genderGenderless").style.display = "none";
 }
 
-botonIrMale.addEventListener("click", verVistaMale);
-function verVistaMale(){
-    document.getElementById("vistaInicio").style.display = "none";
-    document.getElementById("verTodos").style.display = "none";
-    document.getElementById("vistaGenderFemale").style.display = "none";
-    document.getElementById("vistaGenderMale").style.display = "block";
-    document.getElementById("vistaGenderUnknown").style.display = "none";
-    document.getElementById("vistaGenderGenderless").style.display = "none";
+botonMale.addEventListener("click", verMale);
+function verMale() {
+  document.getElementById("inicio").style.display = "none";
+  document.getElementById("verTodos").style.display = "none";
+  document.getElementById("genderFemale").style.display = "none";
+  document.getElementById("genderMale").style.display = "block";
+  document.getElementById("genderUnknown").style.display = "none";
+  document.getElementById("genderGenderless").style.display = "none";
 }
 
-botonIrUnkdown.addEventListener("click", verVistaUnknown);
-function verVistaUnknown(){
-    document.getElementById("vistaPrInicio").style.display = "none";
-    document.getElementById("verTodos").style.display = "none";
-    document.getElementById("vistaGenderFemale").style.display = "none";
-    document.getElementById("vistaGenderMale").style.display = "none";
-    document.getElementById("vistaGenderUnknown").style.display = "block";
-    document.getElementById("vistaGenderGenderless").style.display = "none";
+botonUnkdown.addEventListener("click", verUnknown);
+function verUnknown() {
+  document.getElementById("inicio").style.display = "none";
+  document.getElementById("verTodos").style.display = "none";
+  document.getElementById("genderFemale").style.display = "none";
+  document.getElementById("genderMale").style.display = "none";
+  document.getElementById("genderUnknown").style.display = "block";
+  document.getElementById("genderGenderless").style.display = "none";
 }
 
-botonIrGenderless.addEventListener("click", verVistaGenderless);
-function verVistaGenderless(){
-    document.getElementById("vistaInicio").style.display = "none";
-    document.getElementById("verTodos").style.display = "none";
-    document.getElementById("vistaGenderFemale").style.display = "none";
-    document.getElementById("vistaGenderMale").style.display = "none";
-    document.getElementById("vistaGenderUnknown").style.display = "none";
-    document.getElementById("vistaGenderGenderless").style.display = "block";
+botonGenderless.addEventListener("click", verGenderless);
+function verGenderless() {
+  document.getElementById("inicio").style.display = "none";
+  document.getElementById("verTodos").style.display = "none";
+  document.getElementById("genderFemale").style.display = "none";
+  document.getElementById("genderMale").style.display = "none";
+  document.getElementById("genderUnknown").style.display = "none";
+  document.getElementById("genderGenderless").style.display = "block";
 }
 
 //Filtrando data por subcategoria Female
-const arrayFiltrado = arrayPersonajes.filter(function(subCategoria) {
-    return subCategoria.gender == "Female"    
+const arrayFiltrado = arrayPersonajes.filter(function (subCategoria) {
+  return subCategoria.gender == "Female";
 });
 
 console.log("=====Esta es la data filtrada por female======");
@@ -68,14 +84,7 @@ console.log(arrayFiltrado);
 
 //Tomando objeto en la posición 0 del array de subcategoria Female
 let primerElemento = arrayFiltrado[0];
-//Monstrando el contenido del objeto
-let mostrarPrimerElemento = JSON.stringify(primerElemento);
-let introducirStringEnTarjeta = mostrarPrimerElemento.toString();
-console.log(introducirStringEnTarjeta);
+console.log(Object.entries(primerElemento));
 
-
-
-let {a, b} = {a: 1, b: 2};
-console.log('a:', a, 'b:', b)
-
-
+let { a, b } = { a: 1, b: 2 };
+console.log("a:", a, "b:", b);
