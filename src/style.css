@@ -36,6 +36,8 @@ header {
   justify-content: space-around;
   float: right;
   margin: 10px 60px 0 0;
+  font-size: 25px;
+
 }
 
 .menuHorizontal > li > a {
@@ -141,7 +143,16 @@ section {
   height: 267px;
 }
 
-.desvanecimientoDeInicioBanner {
+.header {
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(15, 177, 69, 0.61),
+    #adff2f
+  );
+}
+
+.desvanecimientoInicioBanner {
   margin-top: 145px;
   height: 7.4rem;
   background-image: linear-gradient(
