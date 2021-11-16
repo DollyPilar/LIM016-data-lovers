@@ -1,0 +1,62 @@
+[33mcommit 7b4dbb15392a22f1132b5a65477d354a5657dbec[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: LuceroSotelo <lucero.eds@gmail.com>
+Date:   Sun Nov 14 23:42:03 2021 -0500
+
+    Se muestran todos los personajes
+
+[33mcommit 55d573c6ba799aee449617582d417e41f2a5cb7f[m
+Author: LuceroSotelo <lucero.eds@gmail.com>
+Date:   Sun Nov 14 15:32:52 2021 -0500
+
+    Se agregó la categoría personajes principales
+
+[33mcommit 22957c8e27a387a401b656f1b0a014d59ebbb277[m
+Author: LuceroSotelo <lucero.eds@gmail.com>
+Date:   Sun Nov 14 09:38:29 2021 -0500
+
+    mejoras en HTML
+
+[33mcommit 7357d33dd720ba3d4b4132d3b873049116f30bed[m
+Merge: 23de3bf 20fcd8d
+Author: Lucero Edith Sotelo Trigos <90124112+LuceroSotelo@users.noreply.github.com>
+Date:   Sat Nov 13 05:25:14 2021 -0500
+
+    Merge pull request #1 from DollyPilar/main
+    
+    modificación del header
+
+[33mcommit 20fcd8d16ef39754196ca58774303ac70d30098f[m
+Author: DollyPilar <llyatidum@gmail.com>
+Date:   Sat Nov 13 05:03:36 2021 -0500
+
+    modificación del header
+
+[33mcommit 23de3bf90c00eab2f76f7c2b652bd077595b7337[m
+Author: LuceroSotelo <lucero.eds@gmail.com>
+Date:   Fri Nov 12 10:56:56 2021 -0500
+
+    Agregué grit y mejoré css
+
+[33mcommit e164a22165798435c04e4007a902e2797ea95d9a[m
+Author: LuceroSotelo <lucero.eds@gmail.com>
+Date:   Thu Nov 11 10:32:42 2021 -0500
+
+    Agregué function filter
+
+[33mcommit 8a1041270d444eb3ee95f5ca060f038c30711c3e[m
+Author: LuceroSotelo <lucero.eds@gmail.com>
+Date:   Wed Nov 10 17:58:29 2021 -0500
+
+    Agregamos vistas
+
+[33mcommit 9d64f0941a20d004a21ea5d20b1c8bfa04800ebb[m
+Author: LuceroSotelo <lucero.eds@gmail.com>
+Date:   Mon Nov 8 19:32:45 2021 -0500
+
+    Cambios en el html y css
+
+[33mcommit f315029a1248f464c6004340e5ac3e29034348b9[m
+Author: danielislas3 <danielislas3@live.com>
+Date:   Thu Oct 21 08:58:57 2021 -0500
+
+    chore(init): Adds project files from curriculum

@@ -38,16 +38,32 @@ function mostrarPersonajes() {
     personajes.forEach((personaje) => {
 
         //utilizando destructuring
-        const { name, status, species, type, gender, origin, location} = personaje;
-        const personajeHTML = document.createElement("p");
+        const {image, name, status, species, type, gender, origin, location } = personaje;
         
+        const personajeHTML = document.createElement('pre');
         personajeHTML.textContent = `
-        Name: ${name} -- Status: ${status} -- Species: ${species} -- Type: ${type} -- Gender: ${gender} -- Origin: ${origin.name} -- Location: ${location.name}
+
+        Name: ${name}
+        Status: ${status}
+        Species: ${species}
+        Type: ${type}
+        Gender: ${gender}
+        Origin: ${origin.name}
+        Location: ${location.name};
         `;
+       
+        const imagenTarjeta = document.createElement('img');
+        imagenTarjeta.src = image;
+
         //insertar en html
+
         resultado.appendChild(personajeHTML)
+        personajeHTML.appendChild(imagenTarjeta)
     });
 }
+
+
+
 
 //Vistas
 function verInicio() {
