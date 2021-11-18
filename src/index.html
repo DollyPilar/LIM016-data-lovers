@@ -9,54 +9,50 @@
 
 <body>
   <header class="header">
-    <a type="button" href="#">
+    <a type="button">
       <img src="images/r.png" alt="" id="botonInicio" class="logo" />
     </a>
 
     <ul class="menuHorizontal" type="button">
-      <li id="botonVerTodos">
-        <a href="#">Ver todos</a>
+      <li id="botonVerTodos"> Ver todos </li>
+      <li> Género
+        <select id="generoSeleccion"></select>
+        <option id="botonGenero" class="menuVertical">
+          <option id="botonFemale" class="b">Female</option>
+          <option id="botonMale" value="c">Male</option>
+          <option id="botonUnknown"  value="d">Unknown</option>
+          <option id="botonGenderless">Genderless</option>
+        </option>
       </li>
-      <li>
-        <a href="#">Género</a>
+
+      <li> Especie
         <ul class="menuVertical">
-          <li id="botonFemale"><a href="#">Female</a></li>
-          <li id="botonMale"><a href="#">Male</a></li>
-          <li id="botonUnknown"><a href="#">Unknown</a></li>
-          <li id="botonGenderless"><a href="#">Genderless</a></li>
+          <li><a>Human</a></li>
+          <li><a>Alien</a></li>
+          <li><a>Humanoid</a></li>
+          <li><a>Unknown</a></li>
+          <li><a>Poopybutthole</a></li>
+          <li><a>Mytholog</a></li>
+          <li><a>Animal</a></li>
+          <li><a>Vampire</a></li>
+          <li><a>Robot</a></li>
+          <li><a>Cronenberg</a></li>
+          <li><a>Disease</a></li>
+          <li><a>Parasite</a></li>
         </ul>
       </li>
 
-      <li>
-        <a href="#">Especie</a>
+      <li> Status
         <ul class="menuVertical">
-          <li><a href="#">Human</a></li>
-          <li><a href="#">Alien</a></li>
-          <li><a href="#">Humanoid</a></li>
-          <li><a href="#">Unknown</a></li>
-          <li><a href="#">Poopybutthole</a></li>
-          <li><a href="#">Mytholog</a></li>
-          <li><a href="#">Animal</a></li>
-          <li><a href="#">Vampire</a></li>
-          <li><a href="#">Robot</a></li>
-          <li><a href="#">Cronenberg</a></li>
-          <li><a href="#">Disease</a></li>
-          <li><a href="#">Parasite</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#">Status</a>
-        <ul class="menuVertical">
-          <li><a href="#">Alive</a></li>
-          <li><a href="#">Dead</a></li>
+          <li><a>Alive</a></li>
+          <li><a>Dead</a></li>
         </ul>
       </li>
     </ul>
   </header>
 
-  <main>
-    <section id="inicio" style="display: block">
+  <main id="principal">
+    <section id="bannerYFilas">
       <div class="inicioBanner">
         <div class="contenidoInicioBanner"></div>
         <div class="desvanecimientoInicioBanner"></div>
@@ -74,170 +70,29 @@
           <img src="images/image15.jpg" alt="" class="filaTarjetas01" />
         </div>
       </div>
-      <section>
-        <div id="resultado"></div>
-      </section>
     </section>
 
-    <section id="verTodos" style="display: none">
-      ESTA ES LA SECCION VER TODOS
-    </section>
+    <section id="contenedorDeSecciones">
 
-    <section id="genderFemale" style="display: none">
-      ESTA ES LA SECCION GENDER FEMALE
-      <div id="content"></div>
+      <div id="verTodos">
+      </div>
 
-      <div id="gridFemale" class="grid">
-        <div>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Distinctio, praesentium. Distinctio quas minus, repudiandae ducimus
-          optio dolore animi aperiam quia?
-        </div>
-        <div>
-          Odio est pariatur obcaecati quibusdam unde ratione ipsa quos
-          voluptates ea mollitia voluptatibus sed blanditiis nesciunt
-          voluptate, suscipit nostrum laboriosam.
-        </div>
-        <div>
-          Illum et, quaerat autem sit nisi dolore est, molestiae illo
-          voluptate impedit pariatur neque adipisci sequi voluptatibus
-          deleniti culpa reiciendis?
-        </div>
-        <div>
-          Reiciendis aliquid tempore id soluta, aliquam placeat velit amet
-          rerum incidunt ab necessitatibus nemo vero fugit deleniti, hic,
-          distinctio facilis!
-        </div>
-        <div>
-          Ipsam dolor aut harum incidunt distinctio, maiores nam dicta non
-          error neque ut enim rem! Libero eveniet mollitia at porro.
-        </div>
-        <div>
-          Quos, placeat quo sed perferendis temporibus hic ipsam porro omnis
-          velit deserunt nobis, ullam facilis eveniet facere officiis
-          inventore a?
-        </div>
-        <div>
-          Eligendi dolorem tenetur sunt ad quasi veritatis accusamus
-          necessitatibus? Mollitia vitae voluptas deleniti voluptate
-          consequuntur asperiores, veniam ipsum modi beatae?
-        </div>
-        <div>
-          Totam accusantium, corporis illum dolor necessitatibus, iure sint
-          ullam sequi voluptas voluptate rem explicabo libero quasi blanditiis
-          perspiciatis harum aperiam.
-        </div>
-        <div>
-          Illum et, quaerat autem sit nisi dolore est, molestiae illo
-          voluptate impedit pariatur neque adipisci sequi voluptatibus
-          deleniti culpa reiciendis?
-        </div>
-        <div>
-          Reiciendis aliquid tempore id soluta, aliquam placeat velit amet
-          rerum incidunt ab necessitatibus nemo vero fugit deleniti, hic,
-          distinctio facilis!
-        </div>
-        <div>
-          Ipsam dolor aut harum incidunt distinctio, maiores nam dicta non
-          error neque ut enim rem! Libero eveniet mollitia at porro.
-        </div>
-        <div>
-          Quos, placeat quo sed perferendis temporibus hic ipsam porro omnis
-          velit deserunt nobis, ullam facilis eveniet facere officiis
-          inventore a?
-        </div>
-        <div>
-          Eligendi dolorem tenetur sunt ad quasi veritatis accusamus
-          necessitatibus? Mollitia vitae voluptas deleniti voluptate
-          consequuntur asperiores, veniam ipsum modi beatae?
-        </div>
-        <div>
-          Totam accusantium, corporis illum dolor necessitatibus, iure sint
-          ullam sequi voluptas voluptate rem explicabo libero quasi blanditiis
-          perspiciatis harum aperiam.
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Distinctio, praesentium. Distinctio quas minus, repudiandae ducimus
-          optio dolore animi aperiam quia?
-        </div>
-        <div>
-          Odio est pariatur obcaecati quibusdam unde ratione ipsa quos
-          voluptates ea mollitia voluptatibus sed blanditiis nesciunt
-          voluptate, suscipit nostrum laboriosam.
-        </div>
-        <div>
-          Illum et, quaerat autem sit nisi dolore est, molestiae illo
-          voluptate impedit pariatur neque adipisci sequi voluptatibus
-          deleniti culpa reiciendis?
-        </div>
-        <div>
-          Reiciendis aliquid tempore id soluta, aliquam placeat velit amet
-          rerum incidunt ab necessitatibus nemo vero fugit deleniti, hic,
-          distinctio facilis!
-        </div>
-        <div>
-          Ipsam dolor aut harum incidunt distinctio, maiores nam dicta non
-          error neque ut enim rem! Libero eveniet mollitia at porro.
-        </div>
-        <div>
-          Quos, placeat quo sed perferendis temporibus hic ipsam porro omnis
-          velit deserunt nobis, ullam facilis eveniet facere officiis
-          inventore a?
-        </div>
-        <div>
-          Eligendi dolorem tenetur sunt ad quasi veritatis accusamus
-          necessitatibus? Mollitia vitae voluptas deleniti voluptate
-          consequuntur asperiores, veniam ipsum modi beatae?
-        </div>
-        <div>
-          Totam accusantium, corporis illum dolor necessitatibus, iure sint
-          ullam sequi voluptas voluptate rem explicabo libero quasi blanditiis
-          perspiciatis harum aperiam.
-        </div>
-        <div>
-          Illum et, quaerat autem sit nisi dolore est, molestiae illo
-          voluptate impedit pariatur neque adipisci sequi voluptatibus
-          deleniti culpa reiciendis?
-        </div>
-        <div>
-          Reiciendis aliquid tempore id soluta, aliquam placeat velit amet
-          rerum incidunt ab necessitatibus nemo vero fugit deleniti, hic,
-          distinctio facilis!
-        </div>
-        <div>
-          Ipsam dolor aut harum incidunt distinctio, maiores nam dicta non
-          error neque ut enim rem! Libero eveniet mollitia at porro.
-        </div>
-        <div>
-          Quos, placeat quo sed perferendis temporibus hic ipsam porro omnis
-          velit deserunt nobis, ullam facilis eveniet facere officiis
-          inventore a?
-        </div>
-        <div>
-          Eligendi dolorem tenetur sunt ad quasi veritatis accusamus
-          necessitatibus? Mollitia vitae voluptas deleniti voluptate
-          consequuntur asperiores, veniam ipsum modi beatae?
-        </div>
-        <div>
-          Totam accusantium, corporis illum dolor necessitatibus, iure sint
-          ullam sequi voluptas voluptate rem explicabo libero quasi blanditiis
-          perspiciatis harum aperiam.
+      <div id="gender">
+        <div id="genderFemale">
         </div>
       </div>
+
+      <div id="genderMale">
+      </div>
+
+      <div id="genderUnknown">
+      </div>
+
+      <div id="genderGenderless">
+      </div>
+    </section>
     </section>
 
-    <section id="genderMale" style="display: none">
-      ESTA ES LA SECCION GENDER MALE
-    </section>
-
-    <section id="genderUnknown" style="display: none">
-      ESTA ES LA SECCION GENDER UNKNOWN
-    </section>
-
-    <section id="genderGenderless" style="display: none">
-      ESTA ES LA SECCION GENDER GENDERLESS
-    </section>
   </main>
 
   <footer class="footer">
