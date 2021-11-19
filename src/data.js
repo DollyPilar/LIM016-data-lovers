@@ -1,12 +1,15 @@
 import data from './data/rickandmorty/rickandmorty.js';
 
-export const filterData = (seleccion) => {
+export const filterDataGender = (seleccion) => {
   return data.results.filter((filtro) => filtro.gender == seleccion)
-  
+}
+
+export const filterDataStatus = (seleccion) => {
+  return data.results.filter((filtro) => filtro.status == seleccion)
 }
 
 export const sortData = () => {
-  return data.results.sort((nombre1, nombre2)=>{
+  return data.results.sort((nombre1, nombre2) => {
     return (nombre1.name < nombre2.name) ? -1 : 1
   });
 }
@@ -43,7 +46,7 @@ const validator = {
     let arrayGuardar = numero.split("");
     //inviertiendo el array
     let arrayInvertido = arrayGuardar.reverse("");
-    //capturando elementos con indices inpares 
+    //capturando elementos con indices inpares
     for (let i = 0; i < arrayInvertido.length; i++) {
       if (i % 2 !== 0) {
         arrayInvertido[i] = arrayInvertido[i] * 2;
@@ -64,8 +67,8 @@ const validator = {
       return true
     }
     else {
-      console.log("Tarjeta inválida")   
-      return false        
+      console.log("Tarjeta inválida")
+      return false
     }
   },
 

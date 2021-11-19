@@ -1,5 +1,5 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-import { filterData } from './data.js';
+import { filterDataGender } from './data.js';
 
 //console.log(data.results);
 
@@ -7,10 +7,12 @@ import { filterData } from './data.js';
 let personajes = data.results;
 const bannerYFilas = document.querySelector('#bannerYFilas');
 let verTodos = document.querySelector("#verTodos");
+let botonInicio = document.querySelector('#botonInicio');
 let botonVerTodos = document.querySelector('botonVerTodos');
 const gender = document.querySelector('#gender');
 let genderSeleccion = document.getElementById('genderSeleccion');
 let filtrarGender;
+let card;
 //const botonGenero = document.querySelector('#botonGenero');
 
 //EVENTOS
@@ -20,16 +22,22 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarPersonajes();
 })
 */
-botonVerTodos = document.addEventListener('click', mostrarVerTodos);
+botonVerTodos = document.addEventListener('click' , mostrarVerTodos);
+botonInicio = document.addEventListener('click', verInicio);
+
+function verInicio(){
+    
+}
 
 
 //FUNCIONES
 
+//Al seleccionar All
 function mostrarVerTodos() {
     bannerYFilas.remove();
     personajes.forEach((personaje) => {
 
-        const card = document.createElement('div');
+        card = document.createElement('div');
         const personajeHTML = document.createElement('pre');
         const { image } = personaje;
         personajeHTML.textContent = `
@@ -62,16 +70,16 @@ genderSeleccion.addEventListener('change',
         console.log(genderSeleccionado.value + ':' + genderSeleccionado.text);
         switch (genderSeleccionado.value) {
             case '001':
-                filtrarGender = filterData('Female');
+                filtrarGender = filterDataGender('Female');
                 break;
             case '002':
-                filtrarGender = filterData('Male');
+                filtrarGender = filterDataGender('Male');
                 break;
             case '003':
-                filtrarGender = filterData('unknown');
+                filtrarGender = filterDataGender('unknown');
                 break;
             case '004':
-                filtrarGender = filterData('Genderless');
+                filtrarGender = filterDataGender('Genderless');
                 break;
             default:
                 console.log('default');
@@ -81,7 +89,7 @@ genderSeleccion.addEventListener('change',
 
         filtrarGender.forEach((personaje) => {
 
-            const card = document.createElement('div');
+            card = document.createElement('div');
             const personajeHTML = document.createElement('pre');
             const { image } = personaje;
             personajeHTML.textContent = `

@@ -41,7 +41,6 @@ header {
 }
 
 .menuHorizontal > li {
-  display: block;
   padding: 25px 30px 30px 30px;
   color: white;
   text-decoration: none;
@@ -70,10 +69,8 @@ header {
 }
 
 .menuVertical li a {
-  display: block;
   color: white;
   padding: 5px 5px 5px 5px;
-  text-decoration: none;
 }
 
 section {
