@@ -16,13 +16,14 @@
     <ul class="menuHorizontal" type="button">
       <li id="botonVerTodos"> Ver todos </li>
       <li> Género
-        <select id="generoSeleccion"></select>
-        <option id="botonGenero" class="menuVertical">
-          <option id="botonFemale" class="b">Female</option>
-          <option id="botonMale" value="c">Male</option>
-          <option id="botonUnknown"  value="d">Unknown</option>
-          <option id="botonGenderless">Genderless</option>
-        </option>
+        <select id="genderSeleccion">
+          <option id="botonGenero" class="menuVertical" value="" disabled selected>
+          <option id="botonFemale" value="001">Female</option>
+          <option id="botonMale" value="002">Male</option>
+          <option id="botonUnknown" value="003">Unknown</option>
+          <option id="botonGenderless" value="004">Genderless</option>
+          </option>
+        </select>
       </li>
 
       <li> Especie

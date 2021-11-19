@@ -1,5 +1,5 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-import {filterData} from './data.js';
+import { filterData } from './data.js';
 
 //console.log(data.results);
 
@@ -7,16 +7,17 @@ import {filterData} from './data.js';
 let personajes = data.results;
 const bannerYFilas = document.querySelector('#bannerYFilas');
 const verTodos = document.querySelector("#verTodos");
+const genderFemale = document.querySelector('genderFemale');
 //const botonGenero = document.querySelector('#botonGenero');
 
 //EVENTOS
 document.addEventListener("DOMContentLoaded", () => {
-mostrarPersonajes();
+    mostrarPersonajes();
 })
 
 function mostrarPersonajes() {
     personajes.forEach((personaje) => {
- 
+
         const card = document.createElement('div');
         const imgCard = document.createElement('div');
         const personajeHTML = document.createElement('pre');
@@ -42,19 +43,69 @@ function mostrarPersonajes() {
     });
 }
 
+let genderSeleccion = document.getElementById('genderSeleccion')
+let filtrarGender;
 
-let generoSeleccion = document.getElementById('generoSeleccion');
+genderSeleccion.addEventListener('change',
+    function () {
+        let genderSeleccionado = this.options[genderSeleccion.selectedIndex];
+        console.log(genderSeleccionado.value + ':' + genderSeleccionado.text);
+        switch (genderSeleccionado.value) {
+            case '001':
+                filtrarGender = filterData('Female');
+                break;
+            case '002':
+                filtrarGender = filterData('Male');
+                break;
+            case '003':
+                filtrarGender = filterData('unknown');
+                break;
+            case '004':
+                filtrarGender = filterData('Genderless');
+                break;
+            default:
+                console.log('default');
+                break;
+        }
+        console.log('filtro aplicado: ', filtrarGender);
+        for (let index = 0; index < filtrarGender.length; index++) {
+            const element = filtrarGender[index];
+            printPersonajes(element);
+        }
 
-for (let i = 0; i < data.results.length; i++){
-    generoSeleccion.add(new Option(data.results[i].gender,i));
-}
+        let filtroSeleccionado = filtrarGender;
+        //console.log(filtroSeleccionado);
 
-let botonGenero = document.getElementById('botonGenero');
-botonGenero.addEventListener('click',()=>{
-    gender = event.target.id;
-    let selecciFiltrada = [...data.results.filter(a=>a.gender == gender)];
-    console.log(selecciFiltrada);
-})
+        filtroSeleccionado.forEach((personaje) => {
+
+            //utilizando destructuring
+            const { image, name, status, species, type, gender, origin, location } = personaje;
+
+            const personajeHTML = document.createElement('pre');
+            personajeHTML.textContent = `
+    
+            Name: ${name}
+            Status: ${status}
+            Species: ${species}
+            Type: ${type}
+            Gender: ${gender}
+            Origin: ${origin.name}
+            Location: ${location.name};
+            `;
+
+            const imagenTarjeta = document.createElement('img');
+            imagenTarjeta.src = image;
+
+            //insertar en html
+
+            genderFemale.appendChild(personajeHTML)
+            personajeHTML.appendChild(imagenTarjeta)
+        });
+        verTodos.remove();
+        bannerYFilas.remove();
+
+    });
+
 
 
 botonGenero.addEventListener("", verGenero);

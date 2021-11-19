@@ -165,15 +165,21 @@ section {
 
 #verTodos {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: space-around;
+  margin:auto;
+  z-index: 1;
+  flex-wrap: wrap;
+  width:88%;
 }
 
 .card {
-  background-color: blueviolet;
+  background-color: rgba(195, 43, 226, 0.856);
   height: 455px;
   width: 360px;
-  margin: 0 20px;
+  margin: 0 20px 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;  
 }
 
 .card .img {
@@ -184,6 +190,6 @@ section {
 .card .img img{
   height: 100%;
   width: 100%;
-  object-fit: cover;
 
 }
+
