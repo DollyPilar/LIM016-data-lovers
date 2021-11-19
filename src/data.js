@@ -2,6 +2,7 @@ import data from './data/rickandmorty/rickandmorty.js';
 
 export const filterData = (seleccion) => {
   return data.results.filter((filtro) => filtro.gender == seleccion)
+  
 }
 
 export const sortData = () => {
