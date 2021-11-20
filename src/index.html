@@ -15,41 +15,41 @@
 
     <ul class="menuHorizontal" type="button">
 
-      <li id="botonVerTodos"> All</li>
+      <li id="botonVerTodos">All</li>
 
       <li> Gender
         <select id="genderSeleccion">
-          <option id="botonGenero" class="menuVertical" value="" disabled selected>
-          <option id="botonFemale" value="001">Female</option>
-          <option id="botonMale" value="002">Male</option>
-          <option id="botonUnknown" value="003">Unknown</option>
-          <option id="botonGenderless" value="004">Genderless</option>
-          </option>
+          <option value="" disabled selected></option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="unknown">Unknown</option>
+          <option value="genderless">Genderless</option>
         </select>
       </li>
 
       <li> Species
-        <ul class="menuVertical">
-          <li><a>Human</a></li>
-          <li><a>Alien</a></li>
-          <li><a>Humanoid</a></li>
-          <li><a>Unknown</a></li>
-          <li><a>Poopybutthole</a></li>
-          <li><a>Mytholog</a></li>
-          <li><a>Animal</a></li>
-          <li><a>Vampire</a></li>
-          <li><a>Robot</a></li>
-          <li><a>Cronenberg</a></li>
-          <li><a>Disease</a></li>
-          <li><a>Parasite</a></li>
-        </ul>
-      </li>
+        <select id="speciesSeleccion">
+          <option value="" disabled selected></option>
+          <option value="human">Human</option>
+          <option value="alien">Alien</option>
+          <option value="humanoid">Humanoid</option>
+          <option value="unknownSpecies">Unknown</option>
+          <option value="poopybutthole">Poopybutthole</option>
+          <option value="mytholog">Mytholog</option>
+          <option value="animal">Animal</option>
+          <option value="vampire">Vampire</option>
+          <option value="robot">Robot</option>
+          <option value="cronenberg">Cronenberg</option>
+          <option value="disease">Disease</option>
+          <option value="parasite">Parasite</option>
+        </select>
 
       <li> Status
-        <ul class="menuVertical">
-          <li><a>Alive</a></li>
-          <li><a>Dead</a></li>
-        </ul>
+        <select id="statusSeleccion">
+          <option value="" disabled selected></option>
+          <option value="alive">Alive</option>
+          <option value="dead">Dead</option>
+        </select>
       </li>
     </ul>
   </header>
@@ -88,25 +88,9 @@
       </div>
     </section>
 
-    <section id="contenedorDeSecciones">
+    <div id="verTodos"></div>
 
-      <div id="verTodos">
-      </div>
-
-      <div id="gender">
-
-      </div>
-
-      <div id="genderMale">
-      </div>
-
-      <div id="genderUnknown">
-      </div>
-
-      <div id="genderGenderless">
-      </div>
-    </section>
-    </section>
+    <div id="personajesFiltrados"></div>
 
   </main>
 

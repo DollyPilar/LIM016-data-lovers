@@ -2,17 +2,21 @@ import data from './data/rickandmorty/rickandmorty.js';
 
 export const filterDataGender = (seleccion) => {
   return data.results.filter((filtro) => filtro.gender == seleccion)
-}
+};
+
+export const filterDataSpecies = (seleccion) => {
+  return data.results.filter((filtro) => filtro.species == seleccion)
+};
 
 export const filterDataStatus = (seleccion) => {
   return data.results.filter((filtro) => filtro.status == seleccion)
-}
+};
 
 export const sortData = () => {
   return data.results.sort((nombre1, nombre2) => {
     return (nombre1.name < nombre2.name) ? -1 : 1
   });
-}
+};
 
 export const computeStats = () => {
 
