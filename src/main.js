@@ -1,5 +1,5 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-import { filterDataGender, filterDataSpecies} from './data.js';
+import { filterDataGender, filterDataSpecies, filterDataStatus, sortData } from './data.js';
 
 //console.log(data.results);
 
@@ -9,10 +9,10 @@ const bannerYFilas = document.querySelector('#bannerYFilas');
 let verTodos = document.querySelector("#verTodos");
 let botonVerTodos = document.getElementById('botonVerTodos');
 const personajesFiltrados = document.querySelector('#personajesFiltrados');
-let genderSeleccion = document.getElementById('genderSeleccion');
-let speciesSeleccion = document.getElementById('speciesSeleccion');
 let filtrarGender;
 let filtrarSpecies;
+let filtrarStatus;
+let ordenar;
 let card;
 
 //-----------------EVENTOS-----------------
@@ -94,10 +94,10 @@ genderSeleccion.addEventListener('change',
             Origin: ${personaje.origin.name}
             Location: ${personaje.location.name};
             `;
-    
+
             const imagenTarjeta = document.createElement('img');
             imagenTarjeta.src = image;
-    
+
             //insertar en html
             personajesFiltrados.appendChild(card).className = 'card';
             card.appendChild(imagenTarjeta);
@@ -171,10 +171,10 @@ speciesSeleccion.addEventListener('change',
             Origin: ${personaje.origin.name}
             Location: ${personaje.location.name};
             `;
-    
+
             const imagenTarjeta = document.createElement('img');
             imagenTarjeta.src = image;
-    
+
             //insertar en html
             personajesFiltrados.appendChild(card).className = 'card';
             card.appendChild(imagenTarjeta);
@@ -183,3 +183,87 @@ speciesSeleccion.addEventListener('change',
     });
 
 
+//Al seleccionar status
+statusSeleccion.addEventListener('change',
+    function () {
+        verTodos.remove();
+        bannerYFilas.remove();
+        let statusSeleccionado = this.options[statusSeleccion.selectedIndex];
+        console.log(statusSeleccionado.value + ':' + statusSeleccionado.text);
+        switch (statusSeleccionado.value) {
+            case 'alive':
+                filtrarStatus = filterDataStatus('Alive');
+                break;
+            case 'dead':
+                filtrarStatus = filterDataStatus('Dead');
+                break;
+            default:
+                console.log('default');
+                break;
+        }
+        console.log('filtro aplicado: ', filtrarStatus);
+
+        filtrarStatus.forEach((personaje) => {
+
+            card = document.createElement('div');
+            const personajeHTML = document.createElement('pre');
+            const { image } = personaje;
+            personajeHTML.textContent = `
+    
+            Name: ${personaje.name}
+            Status: ${personaje.status}
+            Species: ${personaje.species}
+            Type: ${personaje.type}
+            Gender: ${personaje.gender}
+            Origin: ${personaje.origin.name}
+            Location: ${personaje.location.name};
+            `;
+
+            const imagenTarjeta = document.createElement('img');
+            imagenTarjeta.src = image;
+
+            //insertar en html
+            personajesFiltrados.appendChild(card).className = 'card';
+            card.appendChild(imagenTarjeta);
+            card.appendChild(personajeHTML);
+        });
+    });
+
+//Al seleccionar ordenar
+ordenarSeleccion.addEventListener('change',
+    function () {
+        verTodos.remove();
+        bannerYFilas.remove();
+        let ordenSeleccionado = this.options[ordenSeleccion.selectedIndex];
+        console.log(ordenSeleccionado.value + ':' + ordenSeleccionado.text);
+        switch (ordenSeleccionado.value) {
+            case 'az':
+                ordenar = sortData(personajes);
+                break;
+            case 'za':
+                ordenar = sortData(personajes);
+                break;
+            default:
+                console.log('default');
+                break;
+        }
+        console.log('orden aplicado: ', ordenar);
+    }
+)
+
+
+
+
+
+
+
+/*
+const liTemplate = querySelector('#liTemplate');
+const clone = liTemplate.content.cloneNode(true);
+console.log(clone);
+
+let arrayOrdenado = sortData('name');
+console.log(arrayOrdenado);
+arrayOrdenado = document.createElement('div');
+personajesFiltrados.appendChild(arrayOrdenado);
+*/

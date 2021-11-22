@@ -5,6 +5,8 @@
   <meta charset="utf-8" />
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -13,13 +15,122 @@
       <img src="images/r.png" alt="" id="botonInicio" class="logo" />
     </a>
 
-    <ul class="menuHorizontal" type="button">
+    <nav class="menuHorizontal" type="button">
+
+      <ul>
+
+        <li id="botonVerTodos">All</li>
+
+        <li>
+          <select class="select" id="genderSeleccion">
+            <option value="" disabled selected>Gender</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="unknown">Unknown</option>
+            <option value="genderless">Genderless</option>
+          </select>
+        </li>
+
+        <li>
+          <select class="select" id="speciesSeleccion">
+            <option value="" disabled selected>Species</option>
+            <option value="human">Human</option>
+            <option value="alien">Alien</option>
+            <option value="humanoid">Humanoid</option>
+            <option value="unknownSpecies">Unknown</option>
+            <option value="poopybutthole">Poopybutthole</option>
+            <option value="mytholog">Mytholog</option>
+            <option value="animal">Animal</option>
+            <option value="vampire">Vampire</option>
+            <option value="robot">Robot</option>
+            <option value="cronenberg">Cronenberg</option>
+            <option value="disease">Disease</option>
+            <option value="parasite">Parasite</option>
+          </select>
+
+        <li>
+          <select class="select" id="statusSeleccion">
+            <option value="" disabled selected>Status</option>
+            <option value="alive">Alive</option>
+            <option value="dead">Dead</option>
+          </select>
+        </li>
+
+        <li>
+          <select class="select" id="ordenarSeleccion">
+            <option value="" disabled selected>Ordenar</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="principal">
+    <section id="bannerYFilas">
+      <div class="inicioBanner">
+        <div class="contenidoInicioBanner"></div>
+        <div class="desvanecimientoInicioBanner"></div>
+      </div>
+      <div class="filas">
+        <strong>Main characters ▾</strong>
+        <div class="filasTarjetas">
+          <img src="images/image08.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image09.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image10.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image11.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image12.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image13.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image01.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image15.jpg" alt="" class="filaTarjetas01" />
+        </div>
+      </div>
+      <div class="filas">
+        <strong>Locations ▾</strong>
+        <div class="filasTarjetas">
+          <img src="images/image08.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image09.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image10.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image11.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image12.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image13.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image01.jpg" alt="" class="filaTarjetas01" />
+          <img src="images/image15.jpg" alt="" class="filaTarjetas01" />
+        </div>
+      </div>
+    </section>
+
+    <div id="verTodos" class="contenedorCards"></div>
+
+    <div id="personajesFiltrados" class="contenedorCards"></div>
+
+  </main>
+
+  <footer class="footer">
+    <ul class="desarrolladoras">
+      <li><a href="#">2021 <> desarrollado por:</a></li>
+      <li><a href="https://github.com/DollyPilar">Dolly Ochoa</a></li>
+      <li><a href="https://github.com/LuceroSotelo">Lucero Sotelo</a></li>
+    </ul>
+  </footer>
+
+
+
+  <div id="root"></div>
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>
+
+<!--
+<ul class="menuHorizontal" type="button">
 
       <li id="botonVerTodos">All</li>
 
-      <li> Gender
-        <select id="genderSeleccion">
-          <option value="" disabled selected></option>
+      <li>
+        <select class="select" id="genderSeleccion">
+          <option value="" disabled selected>Gender</option>
           <option value="female">Female</option>
           <option value="male">Male</option>
           <option value="unknown">Unknown</option>
@@ -27,9 +138,9 @@
         </select>
       </li>
 
-      <li> Species
-        <select id="speciesSeleccion">
-          <option value="" disabled selected></option>
+      <li> 
+        <select class="select" id="speciesSeleccion">
+          <option value="" disabled selected>Species</option>
           <option value="human">Human</option>
           <option value="alien">Alien</option>
           <option value="humanoid">Humanoid</option>
@@ -44,66 +155,24 @@
           <option value="parasite">Parasite</option>
         </select>
 
-      <li> Status
-        <select id="statusSeleccion">
-          <option value="" disabled selected></option>
+      <li> 
+        <select class="select"  id="statusSeleccion">
+          <option value="" disabled selected>Status</option>
           <option value="alive">Alive</option>
           <option value="dead">Dead</option>
         </select>
       </li>
     </ul>
-  </header>
 
-  <main id="principal">
-    <section id="bannerYFilas">
-      <div class="inicioBanner">
-        <div class="contenidoInicioBanner"></div>
-        <div class="desvanecimientoInicioBanner"></div>
-      </div>
-      <div class="filas">
-        <h1>Main characters ▾</h1>
-        <div class="filasTarjetas">
-          <img src="images/image08.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image09.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image10.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image11.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image12.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image13.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image01.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image15.jpg" alt="" class="filaTarjetas01" />
-        </div>
-      </div>
-      <div class="filas">
-        <h1>Locations ▾</h1>
-        <div class="filasTarjetas">
-          <img src="images/image08.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image09.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image10.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image11.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image12.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image13.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image01.jpg" alt="" class="filaTarjetas01" />
-          <img src="images/image15.jpg" alt="" class="filaTarjetas01" />
-        </div>
-      </div>
-    </section>
+  <template id='liTemplate'
+    <li>
+      <select class="select" id="ordenarAZ">
+        <option value="" disabled selected>Ordenar personajes</option>
+        <option value="a-z">A-Z</option>
+        <option value="z-a">Z-A</option>
+      </select>
+    </li>
+  </template>
 
-    <div id="verTodos"></div>
 
-    <div id="personajesFiltrados"></div>
-
-  </main>
-
-  <footer class="footer">
-    <ul class="desarrolladoras">
-      <li><a href="#">2021 <> desarrollado por:</a></li>
-      <li><a href="https://github.com/DollyPilar">Dolly Ochoa</a></li>
-      <li><a href="https://github.com/LuceroSotelo">Lucero Sotelo</a></li>
-    </ul>
-  </footer>
-
-  <div id="root"></div>
-  <script src="main.js" type="module"></script>
-</body>
-
-</html>
+-->

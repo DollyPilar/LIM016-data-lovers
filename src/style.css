@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: large;
 }
 
 body {
@@ -50,27 +52,19 @@ header {
   background-color: #008b8b;
 }
 
-.menuVertical {
-  position: absolute;
-  display: none;
+.select {
+  position:relative;
+  display: flex;
   list-style: none;
   width: 150px;
   height: auto;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 7px 5px 5px 5px;
-}
-
-.menuHorizontal li:hover .menuVertical {
-  display: block;
-}
-
-.menuVertical li:hover {
-  background-color: lightblue;
-}
-
-.menuVertical li a {
-  color: white;
-  padding: 5px 5px 5px 5px;
+  /*Cambiando el formato original*/
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
 }
 
 section {
@@ -160,7 +154,7 @@ section {
   );
 }
 
-#verTodos {
+.contenedorCards{
   display: flex;
   justify-content: center;
   align-items: space-around;
