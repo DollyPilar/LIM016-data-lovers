@@ -67,6 +67,11 @@ header {
   
 }
 
+.filterBar {
+  display: flex;
+  
+}
+
 section {
   color: #ffffff;
 }

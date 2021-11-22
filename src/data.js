@@ -1,14 +1,14 @@
-import data from './data/rickandmorty/rickandmorty.js';
+//import data from './data/rickandmorty/rickandmorty.js';
 
-export const filterDataGender = (seleccion) => {
+export const filterDataGender = (data, seleccion) => {
   return data.results.filter((filtro) => filtro.gender == seleccion)
 };
 
-export const filterDataSpecies = (seleccion) => {
+export const filterDataSpecies = (data, seleccion) => {
   return data.results.filter((filtro) => filtro.species == seleccion)
 };
 
-export const filterDataStatus = (seleccion) => {
+export const filterDataStatus = (data, seleccion) => {
   return data.results.filter((filtro) => filtro.status == seleccion)
 };
 
@@ -24,6 +24,20 @@ export const sortData = (aOrdenar) => {
   }
 });
 }
+
+export const sortzData = (aOrdenar) => {
+  return data.results.sort((a, b) => {
+  const nameA = a.name.toLowerCase();
+  const nameB = b.name.toLowerCase();
+  if (nameA < nameB){
+    return 1
+  }
+  if (nameA > nameB) {
+    return -1
+  }
+});
+}
+
 
 export const computeStats = () => {
 

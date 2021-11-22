@@ -1,5 +1,5 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-import { filterDataGender, filterDataSpecies, filterDataStatus, sortData } from './data.js';
+import { filterDataGender, filterDataSpecies, filterDataStatus, sortData, sortzData } from './data.js';
 
 //console.log(data.results);
 
@@ -9,9 +9,6 @@ const bannerYFilas = document.querySelector('#bannerYFilas');
 let verTodos = document.querySelector("#verTodos");
 let botonVerTodos = document.getElementById('botonVerTodos');
 const personajesFiltrados = document.querySelector('#personajesFiltrados');
-let filtrarGender;
-let filtrarSpecies;
-let filtrarStatus;
 let ordenar;
 let card;
 
@@ -54,30 +51,38 @@ function mostrarVerTodos() {
 }
 
 //Al seleccionar gender
+function filtradoPorGender(seleccion, localData) {
+    let filtrarGender;
+    switch (seleccion) {
+        case 'female':
+            filtrarGender = filterDataGender(localData, 'Female');
+            break;
+        case 'male':
+            filtrarGender = filterDataGender(localData, 'Male');
+            break;
+        case 'unknown':
+            filtrarGender = filterDataGender(localData, 'unknown');
+            break;
+        case 'genderless':
+            filtrarGender = filterDataGender(localData, 'Genderless');
+            break;
+        default:
+            console.log('default');
+            break;
+    }
+    console.log('filtro aplicado: ', filtrarGender);
+    return filtrarGender
+};
+
 genderSeleccion.addEventListener('change',
     function () {
         verTodos.remove();
         bannerYFilas.remove();
         let genderSeleccionado = this.options[genderSeleccion.selectedIndex];
         console.log(genderSeleccionado.value + ':' + genderSeleccionado.text);
-        switch (genderSeleccionado.value) {
-            case 'female':
-                filtrarGender = filterDataGender('Female');
-                break;
-            case 'male':
-                filtrarGender = filterDataGender('Male');
-                break;
-            case 'unknown':
-                filtrarGender = filterDataGender('unknown');
-                break;
-            case 'genderless':
-                filtrarGender = filterDataGender('Genderless');
-                break;
-            default:
-                console.log('default');
-                break;
-        }
-        console.log('filtro aplicado: ', filtrarGender);
+
+        const filtrarGender = filtradoPorGender(genderSeleccionado.value, data);
+        personajesFiltrados.innerHTML = '';
 
         filtrarGender.forEach((personaje) => {
 
@@ -105,56 +110,64 @@ genderSeleccion.addEventListener('change',
         });
     });
 
+//Al seleccionar species
+function filtradoPorSpecies(seleccion, localData) {
+    let filtrarSpecies;
+    switch (seleccion) {
+        case 'human':
+            filtrarSpecies = filterDataSpecies(localData, 'Human');
+            break;
+        case 'alien':
+            filtrarSpecies = filterDataSpecies(localData, 'Alien');
+            break;
+        case 'humanoid':
+            filtrarSpecies = filterDataSpecies(localData, 'Humanoid');
+            break;
+        case 'unknownSpecies':
+            filtrarSpecies = filterDataSpecies(localData, 'Unknown');
+            break;
+        case 'poopybutthole':
+            filtrarSpecies = filterDataSpecies(localData, 'Poopybutthole');
+            break;
+        case 'mytholog':
+            filtrarSpecies = filterDataSpecies(localData, 'Mytholog');
+            break;
+        case 'animal':
+            filtrarSpecies = filterDataSpecies(localData, 'Animal');
+            break;
+        case 'vampire':
+            filtrarSpecies = filterDataSpecies(localData, 'Vampire');
+            break;
+        case 'robot':
+            filtrarSpecies = filterDataSpecies(localData, 'Robot');
+            break;
+        case 'cronenberg':
+            filtrarSpecies = filterDataSpecies(localData, 'Cronenberg');
+            break;
+        case 'disease':
+            filtrarSpecies = filterDataSpecies(localData, 'Disease');
+            break;
+        case 'parasite':
+            filtrarSpecies = filterDataSpecies(localData, 'Parasite');
+            break;
+        default:
+            console.log('default');
+            break;
+    }
+    console.log('filtro aplicado: ', filtrarSpecies);
+    return filtrarSpecies
+};
 
-// Al seleccionar species
 speciesSeleccion.addEventListener('change',
     function () {
         verTodos.remove();
         bannerYFilas.remove();
+
         let speciesSeleccionado = this.options[speciesSeleccion.selectedIndex];
         console.log(speciesSeleccionado.value + ':' + speciesSeleccionado.text);
-        switch (speciesSeleccionado.value) {
-            case 'human':
-                filtrarSpecies = filterDataSpecies('Human');
-                break;
-            case 'alien':
-                filtrarSpecies = filterDataSpecies('Alien');
-                break;
-            case 'humanoid':
-                filtrarSpecies = filterDataSpecies('Humanoid');
-                break;
-            case 'unknownSpecies':
-                filtrarSpecies = filterDataSpecies('Unknown');
-                break;
-            case 'poopybutthole':
-                filtrarSpecies = filterDataSpecies('Poopybutthole');
-                break;
-            case 'mytholog':
-                filtrarSpecies = filterDataSpecies('Mytholog');
-                break;
-            case 'animal':
-                filtrarSpecies = filterDataSpecies('Animal');
-                break;
-            case 'vampire':
-                filtrarSpecies = filterDataSpecies('Vampire');
-                break;
-            case 'robot':
-                filtrarSpecies = filterDataSpecies('Robot');
-                break;
-            case 'cronenberg':
-                filtrarSpecies = filterDataSpecies('Cronenberg');
-                break;
-            case 'disease':
-                filtrarSpecies = filterDataSpecies('Disease');
-                break;
-            case 'parasite':
-                filtrarSpecies = filterDataSpecies('Parasite');
-                break;
-            default:
-                console.log('default');
-                break;
-        }
-        console.log('filtro aplicado: ', filtrarSpecies);
+
+        const filtrarSpecies = filtradoPorSpecies(speciesSeleccionado.value, data);
+        personajesFiltrados.innerHTML = '';
 
         filtrarSpecies.forEach((personaje) => {
 
@@ -182,26 +195,33 @@ speciesSeleccion.addEventListener('change',
         });
     });
 
-
 //Al seleccionar status
+function filtradoPorStatus(seleccion, localData) {
+    let filtrarStatus;
+    switch (seleccion) {
+        case 'alive':
+            filtrarStatus = filterDataStatus(localData, 'Alive');
+            break;
+        case 'dead':
+            filtrarStatus = filterDataStatus(localData, 'Dead');
+            break;
+        default:
+            console.log('default');
+            break;
+    }
+    console.log('filtro aplicado: ', filtrarStatus);
+}
+
 statusSeleccion.addEventListener('change',
     function () {
         verTodos.remove();
         bannerYFilas.remove();
+
         let statusSeleccionado = this.options[statusSeleccion.selectedIndex];
         console.log(statusSeleccionado.value + ':' + statusSeleccionado.text);
-        switch (statusSeleccionado.value) {
-            case 'alive':
-                filtrarStatus = filterDataStatus('Alive');
-                break;
-            case 'dead':
-                filtrarStatus = filterDataStatus('Dead');
-                break;
-            default:
-                console.log('default');
-                break;
-        }
-        console.log('filtro aplicado: ', filtrarStatus);
+
+        const filtrarStatus = filtradoPorStatus(statusSeleccionado.value, data);
+        personajesFiltrados.innerHTML = '';
 
         filtrarStatus.forEach((personaje) => {
 
@@ -234,7 +254,7 @@ ordenarSeleccion.addEventListener('change',
     function () {
         verTodos.remove();
         bannerYFilas.remove();
-        let ordenSeleccionado = this.options[ordenSeleccion.selectedIndex];
+        let ordenSeleccionado = this.options[ordenarSeleccion.selectedIndex];
         console.log(ordenSeleccionado.value + ':' + ordenSeleccionado.text);
         switch (ordenSeleccionado.value) {
             case 'az':
@@ -247,7 +267,29 @@ ordenarSeleccion.addEventListener('change',
                 console.log('default');
                 break;
         }
-        console.log('orden aplicado: ', ordenar);
+        console.log('orden aplicado az: ', ordenar);
+    }
+)
+
+
+ordenarSeleccion.addEventListener('change',
+    function () {
+        verTodos.remove();
+        bannerYFilas.remove();
+        let ordenSeleccionado = this.options[ordenarSeleccion.selectedIndex];
+        console.log(ordenSeleccionado.value + ':' + ordenSeleccionado.text);
+        switch (ordenSeleccionado.value) {
+            case 'az':
+                ordenar = sortzData(personajes);
+                break;
+            case 'za':
+                ordenar = sortzData(personajes);
+                break;
+            default:
+                console.log('default');
+                break;
+        }
+        console.log('orden aplicado za: ', ordenar);
     }
 )
 
