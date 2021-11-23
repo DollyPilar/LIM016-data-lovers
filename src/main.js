@@ -1,31 +1,17 @@
 import data from "./data/rickandmorty/rickandmorty.js";
 import { filterDataGender, filterDataSpecies, filterDataStatus, sortAZData, sortZAData } from './data.js';
 
-//console.log(data.results);
-
-//VARIABLES
-let personajes = data.results;
+//-----------------VARIABLES-----------------
 const bannerYFilas = document.querySelector('#bannerYFilas');
 let verTodos = document.querySelector("#verTodos");
 let botonVerTodos = document.getElementById('botonVerTodos');
 const personajesFiltrados = document.querySelector('#personajesFiltrados');
-//let card;
-let card = document.getElementById('card');
-
-//-----------------EVENTOS-----------------
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    mostrarPersonajes();
-})
-*/
-botonVerTodos.addEventListener('click', mostrarVerTodos);
+let card;
 
 //-----------------FUNCIONES-----------------
-//Al seleccionar All
-function mostrarVerTodos() {
-    bannerYFilas.remove();
-    personajes.forEach((personaje) => {
-
+//Mostrar cards
+function mostrarCards(personajesCards) {
+    personajesCards.forEach((personaje) => {
         card = document.createElement('div');
         const personajeHTML = document.createElement('pre');
         const { image } = personaje;
@@ -44,10 +30,17 @@ function mostrarVerTodos() {
         imagenTarjeta.src = image;
 
         //insertar en html
-        verTodos.appendChild(card).className = 'card';
+        personajesFiltrados.appendChild(card).className = 'card';
         card.appendChild(imagenTarjeta);
         card.appendChild(personajeHTML);
-    });
+    })
+};
+
+//Al seleccionar All
+botonVerTodos.addEventListener('click', mostrarVerTodos);
+function mostrarVerTodos() {
+    bannerYFilas.remove();
+    mostrarCards(data.results);
 }
 
 //Al seleccionar gender
@@ -84,30 +77,7 @@ genderSeleccion.addEventListener('change',
         const filtrarGender = filtradoPorGender(genderSeleccionado.value, data);
         personajesFiltrados.innerHTML = '';
 
-        filtrarGender.forEach((personaje) => {
-
-            card = document.createElement('div');
-            const personajeHTML = document.createElement('pre');
-            const { image } = personaje;
-            personajeHTML.textContent = `
-    
-            Name: ${personaje.name}
-            Status: ${personaje.status}
-            Species: ${personaje.species}
-            Type: ${personaje.type}
-            Gender: ${personaje.gender}
-            Origin: ${personaje.origin.name}
-            Location: ${personaje.location.name};
-            `;
-
-            const imagenTarjeta = document.createElement('img');
-            imagenTarjeta.src = image;
-
-            //insertar en html
-            personajesFiltrados.appendChild(card).className = 'card';
-            card.appendChild(imagenTarjeta);
-            card.appendChild(personajeHTML);
-        });
+        mostrarCards(filtrarGender);
     });
 
 //Al seleccionar species
@@ -124,7 +94,7 @@ function filtradoPorSpecies(seleccion, localData) {
             filtrarSpecies = filterDataSpecies(localData, 'Humanoid');
             break;
         case 'unknownSpecies':
-            filtrarSpecies = filterDataSpecies(localData, 'Unknown');
+            filtrarSpecies = filterDataSpecies(localData, 'unknown');
             break;
         case 'poopybutthole':
             filtrarSpecies = filterDataSpecies(localData, 'Poopybutthole');
@@ -169,30 +139,7 @@ speciesSeleccion.addEventListener('change',
         const filtrarSpecies = filtradoPorSpecies(speciesSeleccionado.value, data);
         personajesFiltrados.innerHTML = '';
 
-        filtrarSpecies.forEach((personaje) => {
-
-            card = document.createElement('div');
-            const personajeHTML = document.createElement('pre');
-            const { image } = personaje;
-            personajeHTML.textContent = `
-    
-            Name: ${personaje.name}
-            Status: ${personaje.status}
-            Species: ${personaje.species}
-            Type: ${personaje.type}
-            Gender: ${personaje.gender}
-            Origin: ${personaje.origin.name}
-            Location: ${personaje.location.name};
-            `;
-
-            const imagenTarjeta = document.createElement('img');
-            imagenTarjeta.src = image;
-
-            //insertar en html
-            personajesFiltrados.appendChild(card).className = 'card';
-            card.appendChild(imagenTarjeta);
-            card.appendChild(personajeHTML);
-        });
+        mostrarCards(filtrarSpecies);
     });
 
 //Al seleccionar status
@@ -224,30 +171,7 @@ statusSeleccion.addEventListener('change',
         const filtrarStatus = filtradoPorStatus(statusSeleccionado.value, data);
         personajesFiltrados.innerHTML = '';
 
-        filtrarStatus.forEach((personaje) => {
-
-            card = document.createElement('div');
-            const personajeHTML = document.createElement('pre');
-            const { image } = personaje;
-            personajeHTML.textContent = `
-    
-            Name: ${personaje.name}
-            Status: ${personaje.status}
-            Species: ${personaje.species}
-            Type: ${personaje.type}
-            Gender: ${personaje.gender}
-            Origin: ${personaje.origin.name}
-            Location: ${personaje.location.name};
-            `;
-
-            const imagenTarjeta = document.createElement('img');
-            imagenTarjeta.src = image;
-
-            //insertar en html
-            personajesFiltrados.appendChild(card).className = 'card';
-            card.appendChild(imagenTarjeta);
-            card.appendChild(personajeHTML);
-        });
+        mostrarCards(filtrarStatus);
     });
 
 //Al seleccionar ordenar
@@ -266,6 +190,8 @@ function filtradoPorOrden(seleccion, localData) {
     }
     console.log('filtro aplicado: ', filtrarOrden);
     return (filtrarOrden)
+
+
 }
 
 ordenarSeleccion.addEventListener('change',
@@ -279,62 +205,14 @@ ordenarSeleccion.addEventListener('change',
         const filtrarOrden = filtradoPorOrden(ordenSeleccionado.value, data);
         personajesFiltrados.innerHTML = '';
 
-        filtrarOrden.forEach((personaje) => {
-
-            card = document.createElement('div');
-            const personajeHTML = document.createElement('pre');
-            const { image } = personaje;
-            personajeHTML.textContent = `
-    
-            Name: ${personaje.name}
-            Status: ${personaje.status}
-            Species: ${personaje.species}
-            Type: ${personaje.type}
-            Gender: ${personaje.gender}
-            Origin: ${personaje.origin.name}
-            Location: ${personaje.location.name};
-            `;
-
-            const imagenTarjeta = document.createElement('img');
-            imagenTarjeta.src = image;
-
-            //insertar en html
-            personajesFiltrados.appendChild(card).className = 'card';
-            card.appendChild(imagenTarjeta);
-            card.appendChild(personajeHTML);
-        });
+        mostrarCards(filtrarOrden);
     });
 
-/*
-function mostrarCards(personajesCards) {
-    card.innerHTML = '';
-    personajesCards.forEach((personaje) => {
-        let creandoCards = document.createElement('div');
-        const personajeHTML = document.createElement('pre');
-        const { image } = personaje;
-        personajeHTML.textContent = `
-    
-            Name: ${personaje.name}
-            Status: ${personaje.status}
-            Species: ${personaje.species}
-            Type: ${personaje.type}
-            Gender: ${personaje.gender}
-            Origin: ${personaje.origin.name}
-            Location: ${personaje.location.name};
-            `;
 
-        const imagenTarjeta = document.createElement('img');
-        imagenTarjeta.src = image;
 
-        //insertar en html
-        card.appendChild(creandoCards).className = 'card';
-        card.appendChild(imagenTarjeta);
-        card.appendChild(personajeHTML);
 
-    }
-    )
-}
-*/
+
+
 
 /*
 const liTemplate = querySelector('#liTemplate');
