@@ -1,5 +1,5 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-import { filterDataGender, filterDataSpecies, filterDataStatus, sortData, sortzData } from './data.js';
+import { filterDataGender, filterDataSpecies, filterDataStatus, sortAZData, sortZAData } from './data.js';
 
 //console.log(data.results);
 
@@ -9,8 +9,8 @@ const bannerYFilas = document.querySelector('#bannerYFilas');
 let verTodos = document.querySelector("#verTodos");
 let botonVerTodos = document.getElementById('botonVerTodos');
 const personajesFiltrados = document.querySelector('#personajesFiltrados');
-let ordenar;
-let card;
+//let card;
+let card = document.getElementById('card');
 
 //-----------------EVENTOS-----------------
 /*
@@ -210,6 +210,7 @@ function filtradoPorStatus(seleccion, localData) {
             break;
     }
     console.log('filtro aplicado: ', filtrarStatus);
+    return (filtrarStatus)
 }
 
 statusSeleccion.addEventListener('change',
@@ -250,54 +251,90 @@ statusSeleccion.addEventListener('change',
     });
 
 //Al seleccionar ordenar
-ordenarSeleccion.addEventListener('change',
-    function () {
-        verTodos.remove();
-        bannerYFilas.remove();
-        let ordenSeleccionado = this.options[ordenarSeleccion.selectedIndex];
-        console.log(ordenSeleccionado.value + ':' + ordenSeleccionado.text);
-        switch (ordenSeleccionado.value) {
-            case 'az':
-                ordenar = sortData(personajes);
-                break;
-            case 'za':
-                ordenar = sortData(personajes);
-                break;
-            default:
-                console.log('default');
-                break;
-        }
-        console.log('orden aplicado az: ', ordenar);
+function filtradoPorOrden(seleccion, localData) {
+    let filtrarOrden;
+    switch (seleccion) {
+        case 'az':
+            filtrarOrden = sortAZData(localData, 'name');
+            break;
+        case 'za':
+            filtrarOrden = sortZAData(localData, 'name');
+            break;
+        default:
+            console.log('default');
+            break;
     }
-)
-
+    console.log('filtro aplicado: ', filtrarOrden);
+    return (filtrarOrden)
+}
 
 ordenarSeleccion.addEventListener('change',
     function () {
         verTodos.remove();
         bannerYFilas.remove();
+
         let ordenSeleccionado = this.options[ordenarSeleccion.selectedIndex];
         console.log(ordenSeleccionado.value + ':' + ordenSeleccionado.text);
-        switch (ordenSeleccionado.value) {
-            case 'az':
-                ordenar = sortzData(personajes);
-                break;
-            case 'za':
-                ordenar = sortzData(personajes);
-                break;
-            default:
-                console.log('default');
-                break;
-        }
-        console.log('orden aplicado za: ', ordenar);
+
+        const filtrarOrden = filtradoPorOrden(ordenSeleccionado.value, data);
+        personajesFiltrados.innerHTML = '';
+
+        filtrarOrden.forEach((personaje) => {
+
+            card = document.createElement('div');
+            const personajeHTML = document.createElement('pre');
+            const { image } = personaje;
+            personajeHTML.textContent = `
+    
+            Name: ${personaje.name}
+            Status: ${personaje.status}
+            Species: ${personaje.species}
+            Type: ${personaje.type}
+            Gender: ${personaje.gender}
+            Origin: ${personaje.origin.name}
+            Location: ${personaje.location.name};
+            `;
+
+            const imagenTarjeta = document.createElement('img');
+            imagenTarjeta.src = image;
+
+            //insertar en html
+            personajesFiltrados.appendChild(card).className = 'card';
+            card.appendChild(imagenTarjeta);
+            card.appendChild(personajeHTML);
+        });
+    });
+
+/*
+function mostrarCards(personajesCards) {
+    card.innerHTML = '';
+    personajesCards.forEach((personaje) => {
+        let creandoCards = document.createElement('div');
+        const personajeHTML = document.createElement('pre');
+        const { image } = personaje;
+        personajeHTML.textContent = `
+    
+            Name: ${personaje.name}
+            Status: ${personaje.status}
+            Species: ${personaje.species}
+            Type: ${personaje.type}
+            Gender: ${personaje.gender}
+            Origin: ${personaje.origin.name}
+            Location: ${personaje.location.name};
+            `;
+
+        const imagenTarjeta = document.createElement('img');
+        imagenTarjeta.src = image;
+
+        //insertar en html
+        card.appendChild(creandoCards).className = 'card';
+        card.appendChild(imagenTarjeta);
+        card.appendChild(personajeHTML);
+
     }
-)
-
-
-
-
-
-
+    )
+}
+*/
 
 /*
 const liTemplate = querySelector('#liTemplate');
