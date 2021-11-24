@@ -12,7 +12,7 @@ export const filterDataStatus = (data, seleccion) => {
   return data.results.filter((filtro) => filtro.status == seleccion)
 };
 
-export const sortAZData = (data, seleccion) => {
+export const sortAZData = (data) => {
   return data.results.sort((a, b) => {
   const nameA = a.name.toLowerCase();
   const nameB = b.name.toLowerCase();
@@ -25,7 +25,7 @@ export const sortAZData = (data, seleccion) => {
 });
 }
 
-export const sortZAData = (data, seleccion) => {
+export const sortZAData = (data) => {
   return data.results.sort((a, b) => {
   const nameA = a.name.toLowerCase();
   const nameB = b.name.toLowerCase();
@@ -38,6 +38,12 @@ export const sortZAData = (data, seleccion) => {
 });
 }
 
+/*
+export const filterSearchName = (data, e) => {
+  const textoIngresado = e.target.value.toLowerCase();
+  return data.results.filter((filtro) => filtro.name.toLowerCase().includes(textoIngresado))
+}
+*/
 
 export const computeStats = () => {
 
