@@ -3,8 +3,9 @@ import { filterDataGender, filterDataSpecies, filterDataStatus, sortAZData, sort
 
 //-----------------VARIABLES-----------------
 let rickAndMortyPersonajes = data.results;
+const logoInicio = document.querySelector('#logoInicio');
 const bannerYFilas = document.querySelector('#bannerYFilas');
-let botonVerTodos = document.getElementById('botonVerTodos');
+let seleccionVerTodos = document.getElementById('seleccionVerTodos');
 const personajesFiltrados = document.querySelector('#personajesFiltrados');
 let card;
 //input busqueda
@@ -40,7 +41,7 @@ function mostrarCards(personajesCards) {
 }
 
 //Al seleccionar All
-botonVerTodos.addEventListener('click', mostrarVerTodos);
+seleccionVerTodos.addEventListener('click', mostrarVerTodos);
 function mostrarVerTodos() {
     bannerYFilas.remove();
     mostrarCards(rickAndMortyPersonajes);
@@ -219,3 +220,9 @@ inputBusquedaName.addEventListener('keyup', (e) => {
     mostrarCards(filtrarBusqueda);
 })
 
+
+//Redirigir a la vista de Inicio
+logoInicio.addEventListener('click',
+function(){
+    personajesFiltrados.innerHTML = '';
+})

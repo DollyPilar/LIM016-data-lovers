@@ -12,16 +12,16 @@
 <body>
   <header class="header">
     <a type="button">
-      <img src="images/r.png" alt="" id="botonInicio" class="logo" />
+      <img src="images/r.png" alt="" id="logoInicio" class="logo" />
     </a>
 
     <nav class="menuHorizontal" type="button">
 
       <ul class="filterBar">
 
-        <li id="botonVerTodos">All</li>
+        <li id="seleccionVerTodos" class="all">All</li>
 
-        <li>
+        <li class="menu">
           <select class="select" id="genderSeleccion">
             <option value="" disabled selected>Gender</option>
             <option value="female">Female</option>
@@ -31,7 +31,7 @@
           </select>
         </li>
 
-        <li>
+        <li class="menu">
           <select class="select" id="speciesSeleccion">
             <option value="" disabled selected>Species</option>
             <option value="human">Human</option>
@@ -48,7 +48,7 @@
             <option value="parasite">Parasite</option>
           </select>
 
-        <li>
+        <li class="menu">
           <select class="select" id="statusSeleccion">
             <option value="" disabled selected>Status</option>
             <option value="alive">Alive</option>
@@ -56,7 +56,7 @@
           </select>
         </li>
 
-        <li>
+        <li class="menu">
           <select class="select" id="ordenarSeleccion">
             <option value="" disabled selected>Ordenar</option>
             <option value="az">A-Z</option>
@@ -64,7 +64,7 @@
           </select>
         </li>
 
-        <li>
+        <li class="inputBusquedaName">
           <input type="search" id="inputBusquedaName" placeholder="Search...">
         </li>
 
