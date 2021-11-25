@@ -1,11 +1,17 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-import { filterDataGender, filterDataSpecies, filterDataStatus, sortAZData, sortZAData} from './data.js';
+import { filterDataGender, filterDataSpecies, filterDataStatus, sortAZData, sortZAData, filterSearchName} from './data.js';
 
 //-----------------VARIABLES-----------------
 let rickAndMortyPersonajes = data.results;
 const logoInicio = document.querySelector('#logoInicio');
 const bannerYFilas = document.querySelector('#bannerYFilas');
 let seleccionVerTodos = document.getElementById('seleccionVerTodos');
+
+let genderSeleccion = document.getElementById('genderSeleccion');
+let speciesSeleccion = document.getElementById('speciesSeleccion');
+let statusSeleccion = document.getElementById('statusSeleccion');
+let ordenarSeleccion = document.getElementById('ordenarSeleccion');
+
 const personajesFiltrados = document.querySelector('#personajesFiltrados');
 let card;
 //input busqueda
@@ -156,7 +162,7 @@ function filtradoPorStatus(seleccion, localData) {
             filtrarStatus = filterDataStatus(localData, 'Dead');
             break;
         default:
-            console.log('default');
+            //console.log('default');
             break;
     }
     //console.log('filtro aplicado: ', filtrarStatus);
@@ -213,11 +219,8 @@ ordenarSeleccion.addEventListener('change',
 inputBusquedaName.addEventListener('keyup', (e) => {
     bannerYFilas.remove();
     personajesFiltrados.innerHTML = '';
-    const textoIngresado = e.target.value.toLowerCase();
-    const filtrarBusqueda =  rickAndMortyPersonajes.filter(personaje => {
-        return personaje.name.toLowerCase().includes(textoIngresado)
-    });
-    mostrarCards(filtrarBusqueda);
+    const nuevo = filterSearchName (rickAndMortyPersonajes, e)
+    mostrarCards(nuevo);
 })
 
 
