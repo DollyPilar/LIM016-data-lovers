@@ -1,5 +1,5 @@
 import data from "./data/rickandmorty/rickandmorty.js";
-import { filterDataGender, filterDataSpecies, filterDataStatus, sortAZData, sortZAData, filterSearchName} from './data.js';
+import { filterDataGender, filterDataSpecies, filterDataStatus, sortAZData, sortZAData, filterSearchName } from './data.js';
 
 //-----------------VARIABLES-----------------
 let rickAndMortyPersonajes = data.results;
@@ -19,6 +19,7 @@ const inputBusquedaName = document.getElementById('inputBusquedaName');
 
 
 //-----------------FUNCIONES-----------------
+
 //Mostrar cards
 function mostrarCards(personajesCards) {
     personajesCards.forEach((personaje) => {
@@ -49,7 +50,7 @@ function mostrarCards(personajesCards) {
 //Al seleccionar All
 seleccionVerTodos.addEventListener('click', mostrarVerTodos);
 function mostrarVerTodos() {
-    bannerYFilas.remove();
+    bannerYFilas.style.display = "none";
     mostrarCards(rickAndMortyPersonajes);
 }
 
@@ -80,7 +81,7 @@ function filtradoPorGender(seleccion, localData) {
 
 genderSeleccion.addEventListener('change',
     function () {
-        bannerYFilas.remove();
+        bannerYFilas.style.display = "none";
         let genderSeleccionado = this.options[genderSeleccion.selectedIndex];
         //console.log(genderSeleccionado.value + ':' + genderSeleccionado.text);
 
@@ -140,8 +141,7 @@ function filtradoPorSpecies(seleccion, localData) {
 
 speciesSeleccion.addEventListener('change',
     function () {
-        bannerYFilas.remove();
-
+        bannerYFilas.style.display = "none";
         let speciesSeleccionado = this.options[speciesSeleccion.selectedIndex];
         //console.log(speciesSeleccionado.value + ':' + speciesSeleccionado.text);
 
@@ -171,7 +171,7 @@ function filtradoPorStatus(seleccion, localData) {
 
 statusSeleccion.addEventListener('change',
     function () {
-        bannerYFilas.remove();
+        bannerYFilas.style.display = "none";
 
         let statusSeleccionado = this.options[statusSeleccion.selectedIndex];
         //console.log(statusSeleccionado.value + ':' + statusSeleccionado.text);
@@ -204,7 +204,7 @@ function filtradoPorOrden(seleccion, localData) {
 
 ordenarSeleccion.addEventListener('change',
     function () {
-        bannerYFilas.remove();
+        bannerYFilas.style.display = "none";
 
         let ordenSeleccionado = this.options[ordenarSeleccion.selectedIndex];
         //console.log(ordenSeleccionado.value + ':' + ordenSeleccionado.text);
@@ -217,15 +217,16 @@ ordenarSeleccion.addEventListener('change',
 
 //filtrar por busqueda de nombre
 inputBusquedaName.addEventListener('keyup', (e) => {
-    bannerYFilas.remove();
+    bannerYFilas.style.display = "none";
     personajesFiltrados.innerHTML = '';
-    const nuevo = filterSearchName (rickAndMortyPersonajes, e)
+    const nuevo = filterSearchName(rickAndMortyPersonajes, e)
     mostrarCards(nuevo);
 })
 
 
 //Redirigir a la vista de Inicio
 logoInicio.addEventListener('click',
-function(){
-    personajesFiltrados.innerHTML = '';
-})
+    function () {
+        personajesFiltrados.innerHTML = '';
+        bannerYFilas.style.display = "block";
+    })
