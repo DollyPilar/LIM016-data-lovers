@@ -12,8 +12,10 @@ export const filterDataStatus = (data, seleccion) => {
   return data.results.filter((filtro) => filtro.status == seleccion)
 };
 
+
 export const sortAZData = (data) => {
-  return data.results.sort((a, b) => {
+  const nuevaData = [...data.results];
+  return nuevaData.sort((a, b) => {
   const nameA = a.name.toLowerCase();
   const nameB = b.name.toLowerCase();
   if (nameA < nameB){
@@ -26,7 +28,8 @@ export const sortAZData = (data) => {
 }
 
 export const sortZAData = (data) => {
-  return data.results.sort((a, b) => {
+  const nuevaData = [...data.results];
+  return nuevaData.sort((a, b) => {
   const nameA = a.name.toLowerCase();
   const nameB = b.name.toLowerCase();
   if (nameA < nameB){
@@ -38,13 +41,12 @@ export const sortZAData = (data) => {
 });
 }
 
-
 export const filterSearchName = (data, e) => {
   const textoIngresado = e.target.value.toLowerCase();
   return data.filter((filtro) => filtro.name.toLowerCase().includes(textoIngresado))
 }
 
-
+/*
 export const computeStats = () => {
 
 }
@@ -58,6 +60,8 @@ export const example = () => {
 export const anotherExample = () => {
   return 'OMG';
 };
+
+*/
 
 //Funciones y parámetros referenciales para obtener, procesar y manipular datos
 

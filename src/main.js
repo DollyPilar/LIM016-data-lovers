@@ -50,6 +50,7 @@ function mostrarCards(personajesCards) {
 //Al seleccionar All
 seleccionVerTodos.addEventListener('click', mostrarVerTodos);
 function mostrarVerTodos() {
+    personajesFiltrados.innerHTML = '';
     bannerYFilas.style.display = "none";
     mostrarCards(rickAndMortyPersonajes);
 }
@@ -198,8 +199,6 @@ function filtradoPorOrden(seleccion, localData) {
     }
     //console.log('filtro aplicado: ', filtrarOrden);
     return (filtrarOrden)
-
-
 }
 
 ordenarSeleccion.addEventListener('change',
