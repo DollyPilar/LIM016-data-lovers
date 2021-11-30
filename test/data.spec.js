@@ -1,5 +1,9 @@
 import { filterDataGender, filterDataSpecies, filterDataStatus, sortAZData, sortZAData, filterSearchName} from '../src/data.js';
 import data from "../src/data/rickandmorty/rickandmorty.js";
+//import data from "../src/data/rickandmorty/__mocks__/rickandmorty.js";
+
+//require('../src/data/rickandmorty/rickandmorty.js')
+//jest.mock('../src/data/rickandmorty/rickandmorty.js')
 
 describe('filterDataGender', () => {
   it('is a function', () => {
@@ -19,9 +23,9 @@ describe('filterDataSpecies', () => {
     expect(typeof filterDataSpecies).toBe('function');
   });
   it('Todos los elementos del array son Alien', () => {
-    const result = filterDataSpecies(data, 'Alien');
+    const result = filterDataSpecies(data, 'xxxxx');
     result.forEach(element => {
-      expect(element.species).toEqual('Alien');
+      expect(element.species).toEqual('xxxxx');
     });
   })
 })
@@ -42,13 +46,13 @@ describe('sortAZData', () => {
   it('is a function', () => {
     expect(typeof sortAZData).toBe('function');
   });
-  it('El primer elemento del arreglo es Abadango Cluster Princess',()=>{
+  it('El primer elemento del arreglo es Morty Smith',()=>{
     const result = sortAZData(data);
-    expect(result[0].name).toEqual('Abadango Cluster Princess');
+    expect(result[0].name).toEqual('Morty Smith');
   });
-  it('El último elemento del arreglo es Zick Zack',()=>{
+  it('El último elemento del arreglo es Summer Smith',()=>{
     const result = sortAZData(data);
-    expect(result[result.length-1].name).toEqual('Zick Zack');
+    expect(result[result.length-1].name).toEqual('Summer Smith');
   })
 })
 
