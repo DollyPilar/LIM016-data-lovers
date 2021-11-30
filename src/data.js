@@ -41,10 +41,12 @@ export const sortZAData = (data) => {
 });
 }
 
+
 export const filterSearchName = (data, e) => {
   const textoIngresado = e.target.value.toLowerCase();
   return data.filter((filtro) => filtro.name.toLowerCase().includes(textoIngresado))
 }
+
 
 /*
 export const computeStats = () => {

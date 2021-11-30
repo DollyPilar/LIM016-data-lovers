@@ -42,7 +42,7 @@ function mostrarCards(personajesCards) {
 
         //insertar en html
         personajesFiltrados.appendChild(card).className = 'card';
-        card.appendChild(imagenTarjeta);
+        card.appendChild(imagenTarjeta).className = 'imgCard';
         card.appendChild(personajeHTML);
     })
 }

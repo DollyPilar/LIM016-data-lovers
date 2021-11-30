@@ -59,11 +59,11 @@ export default {
             "created": "2017-11-04T18:48:46.250Z"
         },
         {
-            "id": 2,
-            "name": "Morty Smith",
+            "id": 265,
+            "name": "Pickle Rick",
             "status": "Alive",
-            "species": "Human",
-            "type": "",
+            "species": "unknown",
+            "type": "Pickle",
             "gender": "Male",
             "origin": {
                 "name": "Earth (C-137)",
@@ -73,153 +73,100 @@ export default {
                 "name": "Earth (Replacement Dimension)",
                 "url": "https://rickandmortyapi.com/api/location/20"
             },
-            "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/2.jpeg",
+            "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/265.jpeg",
             "episode": [
-                "https://rickandmortyapi.com/api/episode/1",
-                "https://rickandmortyapi.com/api/episode/2",
-                "https://rickandmortyapi.com/api/episode/3",
-                "https://rickandmortyapi.com/api/episode/4",
-                "https://rickandmortyapi.com/api/episode/5",
-                "https://rickandmortyapi.com/api/episode/6",
-                "https://rickandmortyapi.com/api/episode/7",
-                "https://rickandmortyapi.com/api/episode/8",
-                "https://rickandmortyapi.com/api/episode/9",
-                "https://rickandmortyapi.com/api/episode/10",
-                "https://rickandmortyapi.com/api/episode/11",
-                "https://rickandmortyapi.com/api/episode/12",
-                "https://rickandmortyapi.com/api/episode/13",
-                "https://rickandmortyapi.com/api/episode/14",
-                "https://rickandmortyapi.com/api/episode/15",
-                "https://rickandmortyapi.com/api/episode/16",
-                "https://rickandmortyapi.com/api/episode/17",
-                "https://rickandmortyapi.com/api/episode/18",
-                "https://rickandmortyapi.com/api/episode/19",
-                "https://rickandmortyapi.com/api/episode/20",
-                "https://rickandmortyapi.com/api/episode/21",
-                "https://rickandmortyapi.com/api/episode/22",
-                "https://rickandmortyapi.com/api/episode/23",
-                "https://rickandmortyapi.com/api/episode/24",
-                "https://rickandmortyapi.com/api/episode/25",
-                "https://rickandmortyapi.com/api/episode/26",
-                "https://rickandmortyapi.com/api/episode/27",
-                "https://rickandmortyapi.com/api/episode/28",
-                "https://rickandmortyapi.com/api/episode/29",
-                "https://rickandmortyapi.com/api/episode/30",
-                "https://rickandmortyapi.com/api/episode/31"
+                "https://rickandmortyapi.com/api/episode/24"
             ],
-            "url": "https://rickandmortyapi.com/api/character/2",
-            "created": "2017-11-04T18:50:21.651Z"
+            "url": "https://rickandmortyapi.com/api/character/265",
+            "created": "2017-12-31T13:47:10.617Z"
         },
         {
-            "id": 3,
-            "name": "Summer Smith",
+            "id": 6,
+            "name": "Abadango Cluster Princess",
             "status": "Alive",
-            "species": "Human",
+            "species": "Alien",
             "type": "",
             "gender": "Female",
             "origin": {
-                "name": "Earth (Replacement Dimension)",
-                "url": "https://rickandmortyapi.com/api/location/20"
+                "name": "Abadango",
+                "url": "https://rickandmortyapi.com/api/location/2"
+            },
+            "location": {
+                "name": "Abadango",
+                "url": "https://rickandmortyapi.com/api/location/2"
+            },
+            "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/6.jpeg",
+            "episode": [
+                "https://rickandmortyapi.com/api/episode/27"
+            ],
+            "url": "https://rickandmortyapi.com/api/character/6",
+            "created": "2017-11-04T19:50:28.250Z"
+        },
+        {
+            "id": 32,
+            "name": "Bearded Lady",
+            "status": "Dead",
+            "species": "Alien",
+            "type": "Parasite",
+            "gender": "Female",
+            "origin": {
+                "name": "unknown",
+                "url": ""
             },
             "location": {
                 "name": "Earth (Replacement Dimension)",
                 "url": "https://rickandmortyapi.com/api/location/20"
             },
-            "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/3.jpeg",
+            "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/32.jpeg",
             "episode": [
-                "https://rickandmortyapi.com/api/episode/6",
-                "https://rickandmortyapi.com/api/episode/7",
-                "https://rickandmortyapi.com/api/episode/8",
-                "https://rickandmortyapi.com/api/episode/9",
-                "https://rickandmortyapi.com/api/episode/10",
-                "https://rickandmortyapi.com/api/episode/11",
-                "https://rickandmortyapi.com/api/episode/12",
-                "https://rickandmortyapi.com/api/episode/14",
-                "https://rickandmortyapi.com/api/episode/15",
-                "https://rickandmortyapi.com/api/episode/16",
-                "https://rickandmortyapi.com/api/episode/17",
-                "https://rickandmortyapi.com/api/episode/18",
-                "https://rickandmortyapi.com/api/episode/19",
-                "https://rickandmortyapi.com/api/episode/20",
-                "https://rickandmortyapi.com/api/episode/21",
-                "https://rickandmortyapi.com/api/episode/22",
-                "https://rickandmortyapi.com/api/episode/23",
-                "https://rickandmortyapi.com/api/episode/24",
-                "https://rickandmortyapi.com/api/episode/25",
-                "https://rickandmortyapi.com/api/episode/26",
-                "https://rickandmortyapi.com/api/episode/27",
-                "https://rickandmortyapi.com/api/episode/29",
-                "https://rickandmortyapi.com/api/episode/30",
+                "https://rickandmortyapi.com/api/episode/15"
+            ],
+            "url": "https://rickandmortyapi.com/api/character/32",
+            "created": "2017-11-05T09:18:04.184Z"
+        },
+        {
+            "id": 269,
+            "name": "Presidentress of The Mega Gargantuans",
+            "status": "Alive",
+            "species": "Humanoid",
+            "type": "Mega Gargantuan",
+            "gender": "Female",
+            "origin": {
+                "name": "Mega Gargantuan Kingdom",
+                "url": "https://rickandmortyapi.com/api/location/56"
+            },
+            "location": {
+                "name": "Mega Gargantuan Kingdom",
+                "url": "https://rickandmortyapi.com/api/location/56"
+            },
+            "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/269.jpeg",
+            "episode": [
                 "https://rickandmortyapi.com/api/episode/31"
             ],
-            "url": "https://rickandmortyapi.com/api/character/3",
-            "created": "2017-11-04T19:09:56.428Z"
+            "url": "https://rickandmortyapi.com/api/character/269",
+            "created": "2017-12-31T14:01:44.995Z"
         },
         {
-            "id": 277,
-            "name": "Real Fake Doors Salesman",
+            "id": 167,
+            "name": "Izzy",
             "status": "Alive",
-            "species": "Human",
-            "type": "",
-            "gender": "Male",
+            "species": "Animal",
+            "type": "Cat",
+            "gender": "unknown",
             "origin": {
-                "name": "unknown",
-                "url": ""
+                "name": "Earth (Replacement Dimension)",
+                "url": "https://rickandmortyapi.com/api/location/20"
             },
             "location": {
-                "name": "Interdimensional Cable",
-                "url": "https://rickandmortyapi.com/api/location/6"
+                "name": "Earth (Replacement Dimension)",
+                "url": "https://rickandmortyapi.com/api/location/20"
             },
-            "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/277.jpeg",
+            "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/167.jpeg",
             "episode": [
-                "https://rickandmortyapi.com/api/episode/8"
+                "https://rickandmortyapi.com/api/episode/24"
             ],
-            "url": "https://rickandmortyapi.com/api/character/277",
-            "created": "2017-12-31T14:18:30.570Z"
-        },
-        {
-            "id": 278,
-            "name": "Regional Manager Rick",
-            "status": "Dead",
-            "species": "Human",
-            "type": "",
-            "gender": "Male",
-            "origin": {
-                "name": "unknown",
-                "url": ""
-            },
-            "location": {
-                "name": "Citadel of Ricks",
-                "url": "https://rickandmortyapi.com/api/location/3"
-            },
-            "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/278.jpeg",
-            "episode": [
-                "https://rickandmortyapi.com/api/episode/28"
-            ],
-            "url": "https://rickandmortyapi.com/api/character/278",
-            "created": "2017-12-31T14:19:36.487Z"
-        },
-        {
-            "id": 279,
-            "name": "Regular Legs",
-            "status": "Alive",
-            "species": "Human",
-            "type": "",
-            "gender": "Male",
-            "origin": {
-                "name": "unknown",
-                "url": ""
-            },
-            "location": {
-                "name": "Interdimensional Cable",
-                "url": "https://rickandmortyapi.com/api/location/6"
-            },
-            "image": "https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/279.jpeg",
-            "episode": [
-                "https://rickandmortyapi.com/api/episode/8"
-            ],
-            "url": "https://rickandmortyapi.com/api/character/279",
-            "created": "2017-12-31T14:20:31.936Z"
+            "url": "https://rickandmortyapi.com/api/character/167",
+            "created": "2017-12-29T17:07:59.024Z"
         },
     ]
 };
