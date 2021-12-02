@@ -272,6 +272,6 @@ a lo que contiene la página.
 </p>
 
 <p align="center"> 
-<img width="450" height="300"src="src/images/protot02.gif">
+<img width="450" height="300"src="src/images/protot02.png">
 </p>
 
