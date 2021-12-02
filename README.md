@@ -254,15 +254,15 @@ a lo que contiene la página.
 #### Prototipo de baja fidelidad
 
 <p align="center"> 
-<img width="450" height="300"src="src/images/protot03.png">
+<img width="450" height="300"src="src/images/protot03.jpeg">
 </p>
 
 <p align="center"> 
-<img width="450" height="300"src="src/images/protot04.png">
+<img width="450" height="300"src="src/images/protot04.jpeg">
 </p>
 
 <p align="center"> 
-<img width="450" height="300"src="src/images/protot05.png">
+<img width="450" height="300"src="src/images/protot05.jpeg">
 </p>
 
 #### Prototipo de alta fidelidad
@@ -272,6 +272,6 @@ a lo que contiene la página.
 </p>
 
 <p align="center"> 
-<img width="450" height="300"src="src/images/protot02.png">
+<img width="450" height="300"src="src/images/protot02.gif">
 </p>
 
