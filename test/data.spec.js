@@ -11,7 +11,7 @@ describe('filterDataGender', () => {
   });
 
   it('El array de Female contiene 3 elementos', () => {
-    const resultArray = filterDataGender(data, "Female");
+    const resultArray = filterDataGender(data, 'Female');
     expect(resultArray.length).toEqual(3);     
   })
 })
@@ -21,7 +21,7 @@ describe('filterDataSpecies', () => {
     expect(typeof filterDataSpecies).toBe('function');
   });
   it('El array de Alien contiene 2 elementos', () => {
-    const resultArray = filterDataSpecies(data, 'Alien');
+    const resultArray = filterDataSpecies(data, 'alien');
     expect(resultArray.length).toEqual(2);
   })
 })
@@ -31,7 +31,7 @@ describe('filterDataStatus', () => {
     expect(typeof filterDataStatus).toBe('function');
   });
   it('El array de Alive contiene 5 elementos ', () => {
-    const resultArray = filterDataStatus(data, 'Alive');
+    const resultArray = filterDataStatus(data, 'alive');
     expect(resultArray.length).toEqual(5);
   })
 })

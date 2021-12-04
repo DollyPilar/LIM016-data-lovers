@@ -66,6 +66,13 @@ header {
   height: 10px;
 }
 
+#inputBusquedaName{
+  width: 250px;
+  height: 45px;
+  border-radius: 3cm;
+  margin: 0px;
+}
+
 section {
   color: #ffffff;
 }
@@ -254,6 +261,13 @@ nav ul li a:hover {
     cursor: pointer;
     width: 140px;
     height: 40px; 
+  }
+
+  #inputBusquedaName{
+    width: 140px;
+    height: 30px;
+    border-radius: 3cm;
+    margin: 0px 7px;
   }
 
   nav {

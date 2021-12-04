@@ -1,44 +1,44 @@
 //import data from './data/rickandmorty/rickandmorty.js';
 
 export const filterDataGender = (data, seleccion) => {
-  return data.results.filter((filtro) => filtro.gender == seleccion)
+  return data.results.filter((filtro) => filtro.gender.toLowerCase() == seleccion.toLowerCase())
 };
 
 export const filterDataSpecies = (data, seleccion) => {
-  return data.results.filter((filtro) => filtro.species == seleccion)
+  return data.results.filter((filtro) => filtro.species.toLowerCase() == seleccion.toLowerCase())
 };
 
 export const filterDataStatus = (data, seleccion) => {
-  return data.results.filter((filtro) => filtro.status == seleccion)
+  return data.results.filter((filtro) => filtro.status.toLowerCase() == seleccion.toLowerCase())
 };
 
 
 export const sortAZData = (data) => {
   const nuevaData = [...data.results];
   return nuevaData.sort((a, b) => {
-  const nameA = a.name.toLowerCase();
-  const nameB = b.name.toLowerCase();
-  if (nameA < nameB){
-    return -1
-  }
-  if (nameA > nameB) {
-    return 1
-  }
-});
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    if (nameA < nameB) {
+      return -1
+    }
+    if (nameA > nameB) {
+      return 1
+    }
+  });
 }
 
 export const sortZAData = (data) => {
   const nuevaData = [...data.results];
   return nuevaData.sort((a, b) => {
-  const nameA = a.name.toLowerCase();
-  const nameB = b.name.toLowerCase();
-  if (nameA < nameB){
-    return 1
-  }
-  if (nameA > nameB) {
-    return -1
-  }
-});
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    if (nameA < nameB) {
+      return 1
+    }
+    if (nameA > nameB) {
+      return -1
+    }
+  });
 }
 
 
